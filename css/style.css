@@ -41,7 +41,6 @@ img {
 .empire {
 	background-color: #fff;
 	border-radius: 15px;
-	padding: 15px;
 	height: min-content;
 }
 .empire:not(.empire:last-child) {
@@ -53,7 +52,8 @@ img {
 }
 .empire__name {
 	font-size: 32px;
-	margin-bottom: 15px;
+	margin-bottom: 0;
+	padding: 15px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -74,10 +74,19 @@ img {
 	font-size: 16px;
 }
 .empire__accordion-content {
-	display: none;
-	transition: 0.5s;
+	max-height: 0;
+	overflow: hidden;
+	transition: 1s ease-out;
+	text-align: center;
 }
-.empire__accordion.active .empire__name::after {
+.empire.active {
+	padding: 15px;
+}
+.empire.active .empire__name {
+	padding: 0;
+	margin-bottom: 15px;
+}
+.empire.active .empire__name::after {
 	content: '';
 	width: 0;
 	height: 0;
@@ -86,8 +95,7 @@ img {
 	border-left-width: 10px;
 	border-bottom: 10px solid black;
 }
-.empire__accordion.active .empire__accordion-content {
-	display: block;
-	text-align: center;
+.empire.active .empire__accordion-content {
+	max-height: 1000px;
 }
 /* British Empire */
