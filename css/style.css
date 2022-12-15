@@ -73,6 +73,45 @@ img {
 .empire__description {
 	font-size: 16px;
 }
+.empire__statistics {
+	margin-top: 15px;
+}
+.empire__statistics-item {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.empire__statistics-item:not(.empire__statistics-item:last-child) {
+	margin-bottom: 15px;
+}
+.empire__statistics-title {
+	margin-bottom: 5px;
+}
+.printed-text {
+	opacity: 0;
+}
+.printed-text.active {
+	opacity: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: .15em solid #000;
+	margin: 0 auto;
+	animation:
+	typing 15s steps(150, end),
+	blink-caret .7s step-end infinite;
+}
+@keyframes typing {
+	from {
+		max-width: 0
+	}
+	to {
+		max-width: 1000px;
+	}
+}
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #000 }
+}
 .empire__accordion-content {
 	max-height: 0;
 	overflow: hidden;
@@ -98,4 +137,24 @@ img {
 .empire.active .empire__accordion-content {
 	max-height: 1000px;
 }
-/* British Empire */
+/*** Footer ***/
+.footer {
+	padding: 100px;
+	background: linear-gradient(#ccc, #000);
+	color: #fff;
+	text-align: center;
+}
+.footer__page-author {
+	font-size: 32px;
+	margin-bottom: 15px;
+}
+.footer__title {
+	font-size: 16px;
+}
+.footer__link {
+	color: #000066;
+	text-decoration: none;
+}
+.footer__link:hover {
+	text-decoration: underline;
+}
