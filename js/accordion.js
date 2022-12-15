@@ -1,16 +1,19 @@
 export function accordion () {
-	let clicks = document.querySelectorAll('.empire__name');
+	let titles = document.querySelectorAll('.empire__name');
+	let blocks = document.querySelectorAll('.empire');
 
-	for (let i = 0; i < clicks.length; i++) {
-		clicks[i].onclick = function () {
-			if (this.parentNode.parentNode.classList) {
-				for (let j = 0; j < clicks.length; j++) {
-					clicks[j].parentNode.parentNode.classList.remove('active');
+	for (let i = 0; i < titles.length; i++) {
+		titles[i].addEventListener('click', open);
+
+		function open(event) {
+			for (let i = 0; i < titles.length; i++) {
+				blocks[i].classList.remove('active');
+				if (titles[i] == event.currentTarget) {
+					blocks[i].classList.toggle('active');
 				}
-				this.parentNode.parentNode.classList.add('active');
-			} else {
-				this.active += ' ' + active;
 			}
+
 		}
+
 	}
 }

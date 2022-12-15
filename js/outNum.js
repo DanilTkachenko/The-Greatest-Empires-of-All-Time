@@ -8,7 +8,7 @@ export function outNum() {
 			for (let i = 0; i < counters.length; i++) {
 				let pos = counters[i].getBoundingClientRect().top; // Позиция блока, считая сверху окна
 				let win = window.innerHeight - 40; // На 40 пикселей меньше, чем высота окна
-				if (pos < win && counters[i].dataset.stop === "0") {
+				if (counters[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.classList.contains('active') && pos < win &&counters[i].dataset.stop === "0") {
 					counters[i].dataset.stop = 1; // Останавливаем перезапуск счета в этом блоке
 					let x = 0;
 					limit++; // Счетчик будет запущен, увеличиваем переменную на 1
