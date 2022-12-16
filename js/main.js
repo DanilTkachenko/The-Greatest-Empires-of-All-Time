@@ -6,3 +6,6 @@ outNum();
 
 import {printedText} from "./printedText.js";
 printedText();
+
+import {siteThemeChange} from "./siteThemeChange.js";
+siteThemeChange();
